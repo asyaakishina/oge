@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ОГЭ по английскому: Лексика по темам</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* Общие стили */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #4f46e5, #8b5cf6);
+      --secondary-gradient: linear-gradient(135deg, #10b981, #06b6d4);
+      --bg-light: #f9fafb;
+      --text-dark: #111827;
+      --text-gray: #4b5563;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-gray);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(79, 70, 229, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--primary-gradient);
+      color: white;
+      text-align: center;
+      padding: 6rem 0;
+      border-radius: 0 0 var(--radius) var(--radius);
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.2rem;
+      font-size: 2.8rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .card-icon {
+      color: #4f46e5;
+      font-size: 1.2rem;
+    }
+
+    .card-content {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    .card.expanded .card-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card ul {
+      padding-left: 1.25rem;
+      margin: 0.8rem 0;
+    }
+
+    .card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .example {
+      background-color: #f0f9ff;
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      font-style: italic;
+      border-left: 4px solid #06b6d4;
+    }
+
+    /* Guide Section */
+    .guide-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 250px;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary-gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* Footer spacing */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      .hero {
+        padding: 4rem 0;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-steps {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>ОГЭ по английскому: Лексика по темам</h1>
+      <p>Слова и фразы для уверенного ответа на любую тему. Уровень А2-В1.</p>
+      <a href="#vocabulary1" class="btn">Изучить лексику</a>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Первый набор тем -->
+    <section id="vocabulary1">
+      <h2>Лексика по основным темам</h2>
+      <p>Слова и фразы для повседневного общения и популярных тем ОГЭ</p>
+
+      <div class="cards-grid" id="vocabulary-topics1">
+        <!-- Карточки будут добавлены через JS -->
+      </div>
+    </section>
+
+    <!-- Второй набор тем -->
+    <section id="vocabulary2">
+      <h2>Лексика по дополнительным темам</h2>
+      <p>Словарь для более сложных и специализированных тем</p>
+
+      <div class="cards-grid" id="vocabulary-topics2">
+        <!-- Карточки будут добавлены через JS -->
+      </div>
+    </section>
+
+    <!-- Пошаговый гайд -->
+    <section>
+      <h2>Как использовать этот словарь?</h2>
+      <div class="guide-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <p>Выбери тему, которая тебе нужна</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <p>Изучи основные слова и фразы</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <p>Прочитай примеры использования</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <p>Составь свои предложения</p>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <p>Потренируйся в устной речи</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Лексика подобрана для уровня А2-В1 (ОГЭ) с примерами использования</p>
+    </div>
+  </footer>
+
+  <script>
+    // Первый набор тем лексики
+    const vocabularyTopics1 = [
+      {
+        title: "Взаимоотношения в семье и с друзьями",
+        vocabulary: ["close-knit family", "relatives", "get along well with", "have arguments", "trust", "support", "share secrets", "forgive"],
+        examples: [
+          "We sometimes argue about little things.",
+          "It's important to listen to each other to solve a problem.",
+          "I always make up with my friends after a quarrel.",
+          "We usually celebrate birthdays at home with a big cake.",
+          "My responsibilities are to take out the trash and wash the dishes."
+        ]
+      },
+      {
+        title: "Досуг и увлечения",
+        vocabulary: ["hobby", "free time", "enjoy", "be interested in", "be fond of", "relax", "develop skills"],
+        examples: [
+          "I'm fond of reading adventure stories and detective novels.",
+          "My favourite film genre is comedy because it makes me laugh.",
+          "I go in for swimming to stay fit.",
+          "In my free time, I often play computer games with my friends online.",
+          "Books help me to relax and learn new things."
+        ]
+      },
+      {
+        title: "Внешность и характер человека",
+        vocabulary: ["tall/short", "slim/plump", "long/short hair", "kind", "funny", "shy", "hard-working", "confident"],
+        examples: [
+          "He is a tall man with short dark hair.",
+          "My friend is very kind and reliable. I can always rely on him.",
+          "She has long blonde hair and blue eyes.",
+          "My teacher is very patient and always explains everything clearly."
+        ]
+      },
+      {
+        title: "Здоровый образ жизни",
+        vocabulary: ["healthy", "keep fit", "well-being", "balanced diet", "get enough sleep", "morning exercises"],
+        examples: [
+          "It's important to get enough sleep, at least 8 hours a day.",
+          "I try to do morning exercises regularly to keep fit.",
+          "I try to eat more fruits and vegetables and less fast food.",
+          "You should go to the dentist twice a year for a check-up."
+        ]
+      },
+      {
+        title: "Покупки",
+        vocabulary: ["go shopping", "shop assistant", "try on", "cost", "buy", "size", "pocket money"],
+        examples: [
+          "I usually buy clothes in shopping centres.",
+          "I get pocket money from my parents every week.",
+          "Among my friends, casual style is very popular.",
+          "This dress doesn't fit me - I need a bigger size."
+        ]
+      },
+      {
+        title: "Школа",
+        vocabulary: ["subject", "break", "teacher", "homework", "marks", "classmates", "school uniform"],
+        examples: [
+          "We have 6 or 7 lessons every day.",
+          "My favourite subject is English because it's fun and useful.",
+          "I get on well with my classmates.",
+          "I have a pen friend from Great Britain to practise English."
+        ]
+      }
+    ];
+
+    // Второй набор тем лексики
+    const vocabularyTopics2 = [
+      {
+        title: "Мир современных профессий",
+        vocabulary: ["profession", "career", "salary", "skills", "work experience", "programmer", "designer"],
+        examples: [
+          "Nowadays, popular professions are programmers and designers.",
+          "I'd like to become a doctor because I want to help people.",
+          "You need good communication skills for this job.",
+          "My sister is looking for work experience in marketing."
+        ]
+      },
+      {
+        title: "Виды отдыха в различное время года",
+        vocabulary: ["holidays", "travel", "transport", "sightseeing", "go abroad", "package tour"],
+        examples: [
+          "During the summer holidays, I like to travel.",
+          "Last year I visited Sochi with its warm sea.",
+          "You can travel by plane, by train or by car.",
+          "I think travelling by train is the most comfortable."
+        ]
+      },
+      {
+        title: "Природа: флора и фауна",
+        vocabulary: ["environment", "pollution", "protect", "endangered species", "climate", "weather", "natural disasters"],
+        examples: [
+          "We should protect nature and not litter.",
+          "The climate in my region is mild.",
+          "Natural disasters like floods can be dangerous.",
+          "We should recycle paper and plastic to help the environment."
+        ]
+      },
+      {
+        title: "Жизнь в городе/сельской местности",
+        vocabulary: ["city life", "countryside", "quiet", "peaceful", "fresh air", "exciting", "convenient"],
+        examples: [
+          "Life in the city is more exciting with many cinemas and cafes.",
+          "Life in the countryside is quieter and more peaceful.",
+          "The air is cleaner in the countryside.",
+          "I like living in the city because everything is convenient."
+        ]
+      },
+      {
+        title: "Средства массовой информации",
+        vocabulary: ["television", "Internet", "newspapers", "social media", "news", "information"],
+        examples: [
+          "I watch TV in the evenings for entertainment.",
+          "I use the Internet every day to find information.",
+          "My parents read newspapers to learn the news.",
+          "Social media helps me to stay in touch with friends."
+        ]
+      },
+      {
+        title: "Родная страна и страна изучаемого языка",
+        vocabulary: ["geographical position", "capital", "sights", "culture", "traditions", "history"],
+        examples: [
+          "Russia is the largest country in the world.",
+          "The capital of Russia is Moscow.",
+          "The main sights of Moscow are the Red Square and the Kremlin.",
+          "In Britain, people celebrate Bonfire Night on the 5th of November."
+        ]
+      }
+    ];
+
+    // Функция для создания карточки лексики
+    function createVocabularyCard(topic) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="card-title">${topic.title}</div>
+          <i class="fas fa-chevron-down card-icon"></i>
+        </div>
+        <div class="card-content">
+          <p><strong>Основные слова:</strong> ${topic.vocabulary.join(', ')}</p>
+          <p><strong>Примеры предложений:</strong></p>
+          <ul>
+            ${topic.examples.map(example => `<li>${example}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+      return card;
+    }
+
+    // Инициализация карточек
+    document.addEventListener('DOMContentLoaded', () => {
+      const vocabularyContainer1 = document.getElementById('vocabulary-topics1');
+      const vocabularyContainer2 = document.getElementById('vocabulary-topics2');
+
+      vocabularyTopics1.forEach(topic => {
+        const card = createVocabularyCard(topic);
+        vocabularyContainer1.appendChild(card);
+        attachCardToggle(card);
+      });
+
+      vocabularyTopics2.forEach(topic => {
+        const card = createVocabularyCard(topic);
+        vocabularyContainer2.appendChild(card);
+        attachCardToggle(card);
+      });
+    });
+
+    // Функция переключения карточки
+    function attachCardToggle(card) {
+      const header = card.querySelector('.card-header');
+      const content = card.querySelector('.card-content');
+      const icon = card.querySelector('.card-icon');
+
+      header.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+        if (card.classList.contains('expanded')) {
+          icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+          icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
